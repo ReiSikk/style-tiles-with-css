@@ -1,56 +1,94 @@
-/* change these */
+/* Fonts */
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,400,800");
-/* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); */
-@import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Lora:wght@500&family=Poppins:wght@500&family=Prompt:wght@500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@400;500&display=swap");
 
 * {
   box-sizing: border-box;
+}
+html {
+  font-size: 100%;
 }
 
 /* THIS IS ALL meant for editing. You might want to do it differently, 
 name the variables differently, 
 use the fonts in other ways in the font hierarchy etc. */
 
-/* change these */
+/* HEADERS AND ROOT */
 :root {
-  --bg-color: red;
-  --link-color: green;
-  --link-hover-color: blue;
-  --color-4: hotpink;
-  --color-5: rebeccapurple;
-
-  --primary-font: "Open Sans", sans-serif;
-  --secondary-font: "Droid Serif", serif;
-  --main-text-color: #000;
-
+  --bg-color: #353b40;
+  --link-color: #ffab61;
+  --element-color: #f25922;
+  --secondary-color: #bdbebf;
+  --text-color: #ffffff;
   --white-space: 1rem;
+  --header-font: "Prompt", sans-serif;
+  --main-font: "Alike", serif;
+}
+h1 {
+  font-family: var(--header-font);
+  font-weight: 500;
+}
+h2,
+h3,
+h4 {
+  font-family: var(--header-font);
+  font-weight: 400;
 }
 
+/* 
+**********BUTTONS********
+*/
 button {
-  transition: all 3s;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  margin: 0 1rem 0 0; /* 22S - 0 margin-bottom mobile */
 }
-
-a {
-  transition: all 3s;
+.primary-button {
+  font-family: var(--header-font);
+  background-color: var(--element-color);
+  border: none;
+}
+.secondary-button {
+  font-family: var(--header-font);
+  background-color: #000000;
+  border: none;
+}
+button {
+  transition: all 0.2s;
 }
 
 button:hover {
-  background-color: var(--link-hover-color);
-  transform: scale(3) rotate(40deg);
+  transform: scale(1.05);
 }
 
 button:active {
   background-color: var(--bg-color);
 }
 
-a:hover {
-  color: var(--link-hover-color);
-  font-size: 4rem;
+/* 
+********LINKS*****
+*/
+a {
+  transition: all 3s;
 }
-html {
-  font-size: 100%;
-  font-family: var(--primary-font);
+
+a:hover {
+  color: #ffffff;
 }
 
 img {
@@ -64,6 +102,7 @@ footer {
   max-width: 1300px;
   margin: 0 auto;
   padding: calc(2 * var(--white-space));
+  font-family: var(--main-font);
 }
 
 .full-width {
@@ -75,9 +114,9 @@ footer {
 .header-wrapper h1 {
   font-size: 3rem;
   text-transform: uppercase;
-  letter-spacing: -2px;
+  letter-spacing: 0.2rem;
   padding-right: 0.75em;
-  font-weight: bold;
+  font-weight: 500;
   color: white;
 }
 
@@ -117,7 +156,7 @@ ul {
   justify-content: space-between;
 }
 
-.swatches li {
+.colors li {
   margin-right: 5vw;
   height: 15vw;
   width: 20%;
@@ -127,46 +166,23 @@ ul li:last-child {
   margin-right: 0;
 }
 
-.color-swatch-1 {
+.colorblock1 {
   background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
-.color-swatch-2 {
-  background-color: var(--link-color);
+.colorblock2 {
+  background-color: var(--element-color);
+  color: var(--text-color);
 }
 
-.color-swatch-3 {
-  background-color: var(--link-hover-color);
+.colorblock3 {
+  background-color: var(--secondary-color);
 }
 
-.color-swatch-4 {
-  background-color: var(--color-4);
-}
-
-.color-swatch-5 {
-  background-color: var(--color-5);
-}
-
-.textures li {
-  height: 30vw;
-  width: 40%;
-  margin-right: 5vw;
-}
-
-.texture-swatch-1 {
-  background: url(../img/pw_maze_white.png) top left repeat;
-}
-
-.texture-swatch-2 {
-  background: url(../img/subtle_grunge.png) top left repeat;
-}
-
-.texture-swatch-1 {
-  background: url(../img/pw_maze_white.png) top left repeat;
-}
-
-.texture-swatch-3 {
-  background: url(../img/white_paperboard.png) top left repeat;
+.colorblock4 {
+  background-color: var(--text-color);
+  border: 1px solid black;
 }
 
 .images ul {
@@ -178,33 +194,6 @@ ul li:last-child {
   display: block;
   /*margin-right: 5vw;*/
   margin-bottom: 1rem;
-}
-
-button {
-  padding: 1rem;
-  border-radius: 4px;
-  background: var(--link-color);
-  text-align: center;
-  text-decoration: none;
-  font: bold 1.25em/1 var(--primary-font);
-  letter-spacing: 1px;
-  color: white;
-  text-transform: uppercase;
-  text-shadow: 0px -1px 0px #0374a0;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  margin: 0 1rem 0 0; /* 22S - 0 margin-bottom mobile */
-}
-
-.secondary-button {
-  background: var(--color-5);
-}
-
-button:focus,
-button:active,
-button:focus-within {
-  outline: 0;
-  border-radius: 4px;
 }
 
 .typography-main {
@@ -223,9 +212,17 @@ button:focus-within {
 }
 
 p.typography-sample {
-  font-family: var(--secondary-font);
+  font-family: var(--main-font);
   line-height: 1.5;
+  background-color: var(--bg-color);
+  padding: 1rem;
+  color: var(--text-color);
   max-width: 960px;
+}
+.typography-link {
+  background-color: var(--bg-color);
+  padding: 0.2rem;
+  color: var(--link-color);
 }
 
 strong {
@@ -254,7 +251,7 @@ p[class*="font-details-"] {
 
 .adjectives ul {
   font-size: 2rem;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .adjectives ul {
